@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="employeeName" type="xs:string" />
+        <xs:element name="employeeMail" type="xs:string" />
+        <xs:element name="employeeId" type="xs:string" />
+        <xs:element name="bloodGroup" type="xs:string" />
+        <xs:element name="personalDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="employeeId" type="xs:string" />
+              <xs:element name="primarySkill" type="xs:string" />
+              <xs:element name="birthPlace" type="xs:string" />
+              <xs:element name="fatherName" type="xs:string" />
+              <xs:element name="motherMaidenName" type="xs:string" />
+              <xs:element name="personlEmail" type="xs:string" />
+              <xs:element name="presentAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="dNo" type="xs:unsignedByte" />
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="state" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                    <xs:element name="zipcode" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="presentAddressFromDate" type="xs:dateTime" />
+              <xs:element name="permanentAddressFromDate" type="xs:dateTime" />
+              <xs:element name="presentAddressToDate" />
+              <xs:element name="permanentAddressToDate" />
+              <xs:element name="title" type="xs:string" />
+              <xs:element name="nationality" type="xs:string" />
+              <xs:element name="maidenName" />
+              <xs:element name="motherName" type="xs:string" />
+              <xs:element name="dob" type="xs:dateTime" />
+              <xs:element name="alternateEmail" type="xs:string" />
+              <xs:element name="permanentAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="dNo" type="xs:unsignedShort" />
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="state" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                    <xs:element name="zipcode" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EducationDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Lowersecondaryeducation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="qualificationWithSpecialization" type="xs:string" />
+                          <xs:element name="instituteCity" type="xs:string" />
+                          <xs:element name="universityCity" type="xs:string" />
+                          <xs:element name="institutionName" type="xs:string" />
+                          <xs:element name="boardName" type="xs:string" />
+                          <xs:element name="boardAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="periodFrom">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="studentId" type="xs:string" />
+                          <xs:element name="program" type="xs:string" />
+                          <xs:element name="percentageMarks" type="xs:decimal" />
+                          <xs:element name="periodTo">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="HigherSecondayEducation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="qualificationWithSpecialization" type="xs:string" />
+                          <xs:element name="instituteCity" type="xs:string" />
+                          <xs:element name="universityCity" type="xs:string" />
+                          <xs:element name="institutionName" type="xs:string" />
+                          <xs:element name="boardName" type="xs:string" />
+                          <xs:element name="boardAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="periodFrom">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="studentId" type="xs:string" />
+                          <xs:element name="program" type="xs:string" />
+                          <xs:element name="percentageMarks" type="xs:decimal" />
+                          <xs:element name="periodTo">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Diplomo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="qualificationWithSpecialization" type="xs:string" />
+                          <xs:element name="instituteCity" type="xs:string" />
+                          <xs:element name="universityCity" type="xs:string" />
+                          <xs:element name="institutionName" type="xs:string" />
+                          <xs:element name="universityName" type="xs:string" />
+                          <xs:element name="universityAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="periodFrom">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="studentId" type="xs:string" />
+                          <xs:element name="program" type="xs:string" />
+                          <xs:element name="percentageMarks" type="xs:decimal" />
+                          <xs:element name="periodTo">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BatchelorDegree">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="qualificationWithSpecialization" type="xs:string" />
+                          <xs:element name="instituteCity" type="xs:string" />
+                          <xs:element name="universityCity" type="xs:string" />
+                          <xs:element name="institutionName" type="xs:string" />
+                          <xs:element name="universityName" type="xs:string" />
+                          <xs:element name="universityAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="periodFrom">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="studentId" type="xs:string" />
+                          <xs:element name="program" type="xs:string" />
+                          <xs:element name="percentageMarks" type="xs:decimal" />
+                          <xs:element name="periodTo">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MastersDegree">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="qualificationWithSpecialization" type="xs:string" />
+                          <xs:element name="instituteCity" type="xs:string" />
+                          <xs:element name="universityCity" type="xs:string" />
+                          <xs:element name="institutionName" type="xs:string" />
+                          <xs:element name="universityName" type="xs:string" />
+                          <xs:element name="universityAddress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="periodFrom">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="studentId" type="xs:string" />
+                          <xs:element name="program" type="xs:string" />
+                          <xs:element name="percentageMarks" type="xs:decimal" />
+                          <xs:element name="periodTo">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="type" type="xs:string" />
+                                <xs:element name="isEstimate" type="xs:boolean" />
+                                <xs:element name="value" type="xs:unsignedByte" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="EmergencyContact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" />
+                    <xs:element name="relationship" type="xs:string" />
+                    <xs:element name="phone" type="xs:unsignedInt" />
+                    <xs:element name="email" type="xs:string" />
+                    <xs:element name="address">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="dNo" type="xs:unsignedByte" />
+                          <xs:element name="street" type="xs:string" />
+                          <xs:element name="city" type="xs:string" />
+                          <xs:element name="state" type="xs:string" />
+                          <xs:element name="country" type="xs:string" />
+                          <xs:element name="zipcode" type="xs:unsignedShort" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="additionalDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empId" type="xs:string" />
+              <xs:element name="passportNo" type="xs:string" />
+              <xs:element name="passportExpiryDate" type="xs:dateTime" />
+              <xs:element name="visaRejectedStatus" type="xs:string" />
+              <xs:element name="visaRejectedDate" />
+              <xs:element name="visaRejectedReason" />
+              <xs:element name="visaRejectedCountry" />
+              <xs:element name="panNo" type="xs:string" />
+              <xs:element name="itPanNo" type="xs:string" />
+              <xs:element name="drivingLicenseNo" type="xs:string" />
+              <xs:element name="drivingLicenseValidDate" type="xs:dateTime" />
+              <xs:element name="referenceStatus" type="xs:string" />
+              <xs:element name="referedPersonName" type="xs:string" />
+              <xs:element name="referedPersonOrg" type="xs:string" />
+              <xs:element name="referedPersonDesignation" type="xs:string" />
+              <xs:element name="referedPersonAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="dNo" type="xs:unsignedByte" />
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="state" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                    <xs:element name="zipcode" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="referedPersonContact" type="xs:unsignedLong" />
+              <xs:element name="referedpersonEmail" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="previousEmploymentDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Employement1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CompanyName">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="employerSno" type="xs:unsignedByte" />
+                          <xs:element name="previousCompanyName" type="xs:string" />
+                          <xs:element name="previousCompanyAdrress">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="dNo" type="xs:unsignedShort" />
+                                <xs:element name="street" type="xs:string" />
+                                <xs:element name="city" type="xs:string" />
+                                <xs:element name="state" type="xs:string" />
+                                <xs:element name="country" type="xs:string" />
+                                <xs:element name="zipcode" type="xs:unsignedShort" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="previousEmpType" type="xs:string" />
+                          <xs:element name="previousEmpDesignation" type="xs:string" />
+                          <xs:element name="reportingPersonName" type="xs:string" />
+                          <xs:element name="repostingPersonPosition" type="xs:string" />
+                          <xs:element name="reportingPersonContact" type="xs:unsignedLong" />
+                          <xs:element name="previousEmploymentPeriodFrom" type="xs:string" />
+                          <xs:element name="previousEmploymentPeriodTo" type="xs:string" />
+                          <xs:element name="previousEmpId" type="xs:string" />
+                          <xs:element name="leavingReason" type="xs:string" />
+                          <xs:element name="leaveMode" type="xs:string" />
+                          <xs:element name="lastSalary" type="xs:string" />
+                          <xs:element name="paySlips" type="xs:string" />
+                          <xs:element name="form16" type="xs:string" />
+                          <xs:element name="relievingLetter" type="xs:string" />
+                          <xs:element name="appointmentLetter" type="xs:string" />
+                          <xs:element name="empId" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

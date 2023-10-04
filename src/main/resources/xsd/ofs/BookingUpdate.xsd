@@ -1,0 +1,2525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://cevalogistics.com/OFS/Schemas/BookingUpdate" 
+xmlns:ns1="http://cevalogistics.com/OFS/Schemas/BookingUpdate" targetNamespace="http://cevalogistics.com/OFS/Schemas/BookingUpdate" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<!--MasterForm for Master updates and XMLBooking for House updates -->
+	<xs:element name="MasterForm">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MasterFormCtry" minOccurs="0"/>
+				<xs:element ref="MasterFormName" minOccurs="0"/>
+				<xs:element ref="MasterBooking" minOccurs="0"/>
+				<xs:element ref="Houses" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="2.5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MasterBooking">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="XMLBooking" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Houses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="XMLBooking" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="XMLBooking">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CallbackURL" minOccurs="0"/>
+				<xs:element ref="Header" minOccurs="0"/>
+				<xs:element ref="PartyDetails" minOccurs="0"/>
+				<xs:element ref="References" minOccurs="0"/>
+				<xs:element ref="BIR" minOccurs="0"/>
+				<xs:element ref="ExtendedTexts" minOccurs="0"/>
+				<xs:element ref="ShipmentDetails" minOccurs="0"/>
+				<xs:element ref="LineItem" minOccurs="0"/>
+				<xs:element ref="TotalCharges" minOccurs="0"/>
+				<xs:element ref="DocumentDeliveries" minOccurs="0"/>
+				<xs:element ref="VatOnBl" minOccurs="0"/>
+				<xs:element ref="FreeText" minOccurs="0"/>
+				<xs:element ref="RODetails" minOccurs="0"/>
+				<xs:element ref="BillingSummary" minOccurs="0"/>
+				<xs:element ref="DFloDetails" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="2.5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CallbackURL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CallbackURLdetails" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CallbackURLdetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CallbackQualifier" minOccurs="0"/>
+				<xs:element ref="CallbackContents" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BillingSummary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BillingSummaryInvoice" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BillingSummaryInvoice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Environment" minOccurs="0"/>
+				<xs:element ref="CustomerNumber" minOccurs="0"/>
+				<xs:element ref="InvoiceType" minOccurs="0"/>
+				<xs:element ref="InvoiceTotal" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Form" minOccurs="0"/>
+				<xs:element ref="PageNumber" minOccurs="0"/>
+				<xs:element ref="DateOfIssue" minOccurs="0"/>
+				<xs:element ref="DateOfIssueUTC" minOccurs="0"/>
+				<xs:element ref="DateOfIssueTZ" minOccurs="0"/>
+				<xs:element ref="Purpose" minOccurs="0"/>
+				<xs:element ref="Reason" minOccurs="0"/>
+				<xs:element ref="Sender" minOccurs="0"/>
+				<xs:element ref="Receiver" minOccurs="0"/>
+				<xs:element ref="CevaBookingNumberHouse" minOccurs="0"/>
+				<xs:element ref="CevaBookingNumberMaster" minOccurs="0"/>
+				<xs:element ref="DossierNumber" minOccurs="0"/>
+				<xs:element ref="House" minOccurs="0"/>
+				<xs:element ref="DomesticHouse" minOccurs="0"/>
+				<xs:element ref="HousePrintDate" minOccurs="0"/>
+				<xs:element ref="Master" minOccurs="0"/>
+				<xs:element ref="LinerBookNo" minOccurs="0"/>
+				<xs:element ref="MasterPrintedDate" minOccurs="0"/>
+				<xs:element ref="VGMEventDate" minOccurs="0"/>
+				<xs:element ref="Country" minOccurs="0"/>
+				<xs:element ref="User" minOccurs="0"/>
+				<xs:element ref="TruckMaster" minOccurs="0"/>
+				<xs:element ref="EDIType" minOccurs="0"/>
+				<xs:element ref="BookingType" minOccurs="0"/>
+				<xs:element ref="Mode" minOccurs="0"/>
+				<xs:element ref="CEVAUniqueID" minOccurs="0"/>
+				<xs:element ref="BookingCreateDate" minOccurs="0"/>
+				<xs:element ref="BookingCreateDateUTC" minOccurs="0"/>
+				<xs:element ref="BookingCreateDateTZ" minOccurs="0"/>
+				<xs:element ref="MainCarriageServiceCode" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartyDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Shipper" minOccurs="0"/>
+				<xs:element ref="Consignee" minOccurs="0"/>
+				<xs:element ref="Customer" minOccurs="0"/>
+				<xs:element ref="Bill" minOccurs="0"/>
+				<xs:element ref="Payer" minOccurs="0"/>
+				<xs:element ref="Issue" minOccurs="0"/>
+				<xs:element ref="Delivery" minOccurs="0"/>
+				<xs:element ref="Forwarder" minOccurs="0"/>
+				<xs:element ref="Haulier" minOccurs="0"/>
+				<xs:element ref="Terminal" minOccurs="0"/>
+				<xs:element ref="Carrier" minOccurs="0"/>
+				<xs:element ref="Pickup" minOccurs="0"/>
+				<xs:element ref="Agent" minOccurs="0"/>
+				<xs:element ref="X3" minOccurs="0"/>
+				<xs:element ref="Notify" minOccurs="0"/>
+				<xs:element ref="Notify2" minOccurs="0"/>
+				<xs:element ref="Notify3" minOccurs="0"/>
+				<xs:element ref="Notify4" minOccurs="0"/>
+				<xs:element ref="ShipperLA" minOccurs="0"/>
+				<xs:element ref="ConsigneeLA" minOccurs="0"/>
+				<xs:element ref="CustomerLA" minOccurs="0"/>
+				<xs:element ref="IssueLA" minOccurs="0"/>
+				<xs:element ref="DeliveryLA" minOccurs="0"/>
+				<xs:element ref="HaulierLA" minOccurs="0"/>
+				<xs:element ref="TerminalLA" minOccurs="0"/>
+				<xs:element ref="PickupLA" minOccurs="0"/>
+				<xs:element ref="X3LA" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Shipper">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Agent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Issue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Payer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Carrier">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Customer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		<xs:element name="Bill">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Delivery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="Longitude" minOccurs="0"/>
+				<xs:element ref="Latitude" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Consignee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Haulier">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Terminal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pickup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="Longitude" minOccurs="0"/>
+				<xs:element ref="Latitude" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Notify">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Notify2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Notify3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Notify4">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="X3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="X3LA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Forwarder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipperLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsigneeLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomerLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IssueLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeliveryLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HaulierLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TerminalLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PickupLA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="IATACode" minOccurs="0"/>
+				<xs:element ref="CassCode" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="SecurityNum" minOccurs="0"/>
+				<xs:element ref="KnownShipper" minOccurs="0"/>
+				<xs:element ref="Category" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PartyCustRefs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AddLine1" minOccurs="0"/>
+				<xs:element ref="AddLine2" minOccurs="0"/>
+				<xs:element ref="AddLine3" minOccurs="0"/>
+				<xs:element ref="AddLine4" minOccurs="0"/>
+				<xs:element ref="AddLine5" minOccurs="0"/>
+				<xs:element ref="Name1" minOccurs="0"/>
+				<xs:element ref="Name2" minOccurs="0"/>
+				<xs:element ref="Address1" minOccurs="0"/>
+				<xs:element ref="Address2" minOccurs="0"/>
+				<xs:element ref="City" minOccurs="0"/>
+				<xs:element ref="State" minOccurs="0"/>
+				<xs:element ref="ZipCode" minOccurs="0"/>
+				<xs:element ref="Country" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="References">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Reference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Party" minOccurs="0"/>
+				<xs:element ref="Qualifier" minOccurs="0"/>
+				<xs:element ref="Text" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipmentDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CarrierCode" minOccurs="0"/>
+				<xs:element ref="CarrierName" minOccurs="0"/>
+				<xs:element ref="VendorNumber" minOccurs="0"/>
+				<xs:element ref="ServiceLevel" minOccurs="0"/>
+				<xs:element ref="SecurityText" minOccurs="0"/>
+				<xs:element ref="AirLocationDateTime" minOccurs="0"/>
+				<xs:element ref="OceanLocationDateTime" minOccurs="0"/>
+				<xs:element ref="From" minOccurs="0"/>
+				<xs:element ref="To" minOccurs="0"/>
+				<xs:element ref="FromLongitude" minOccurs="0"/>
+				<xs:element ref="FromLatitude" minOccurs="0"/>
+				<xs:element ref="ToLongitude" minOccurs="0"/>
+				<xs:element ref="ToLatitude" minOccurs="0"/>
+				<xs:element ref="MasterFrom" minOccurs="0"/>
+				<xs:element ref="MasterTo" minOccurs="0"/>
+				<xs:element ref="IncoTerms" minOccurs="0"/>
+				<xs:element ref="OriginAgent" minOccurs="0"/>
+				<xs:element ref="DestinationAgent" minOccurs="0"/>
+				<xs:element ref="Pieces" minOccurs="0"/>
+				<xs:element ref="Kind" minOccurs="0"/>
+				<xs:element ref="SLAC" minOccurs="0"/>
+				<xs:element ref="ActualWeight" minOccurs="0"/>
+				<xs:element ref="ChargeableWeight" minOccurs="0"/>
+				<xs:element ref="Volume" minOccurs="0"/>
+				<xs:element ref="UnitOfMeasure" minOccurs="0"/>
+				<xs:element ref="CubicCR" minOccurs="0"/>
+				<xs:element ref="WeightToVolumeRatio" minOccurs="0"/>
+				<xs:element ref="Cset" minOccurs="0"/>
+				<xs:element ref="Commcode" minOccurs="0"/>
+				<xs:element ref="CTField" minOccurs="0"/>
+				<xs:element ref="AWBCurrency" minOccurs="0"/>
+				<xs:element ref="TotalPrepaidOrCollect" minOccurs="0"/>
+				<xs:element ref="TotalDisbursementPrepaidIndicator" minOccurs="0"/>
+				<xs:element ref="NilCarriageValueIndicator" minOccurs="0"/>
+				<xs:element ref="NilCustomsValueIndicator" minOccurs="0"/>
+				<xs:element ref="NilInsuranceValueIndicator" minOccurs="0"/>
+				<xs:element ref="ShipmentReferenceNumber" minOccurs="0"/>
+				<xs:element ref="ExportBroker" minOccurs="0"/>
+				<xs:element ref="ImportBroker" minOccurs="0"/>
+				<xs:element ref="ExporterCompNumber" minOccurs="0"/>
+				<xs:element ref="ImporterCompNumber" minOccurs="0"/>
+				<xs:element ref="AccountingInformation" minOccurs="0"/>
+				<xs:element ref="TStatus" minOccurs="0"/>
+				<xs:element ref="P1" minOccurs="0"/>
+				<xs:element ref="P2" minOccurs="0"/>
+				<xs:element ref="CargoType" minOccurs="0"/>
+				<xs:element ref="DangerousGoods" minOccurs="0"/>
+				<xs:element ref="DangerousGoodsCLASS" minOccurs="0"/>
+				<xs:element ref="DangerousGoodsUNNumber" minOccurs="0"/>
+				<xs:element ref="GeneralBookingRemarks" minOccurs="0"/>
+				<xs:element ref="ShipperRemarks" minOccurs="0"/>
+				<xs:element ref="ConsigneeRemarks" minOccurs="0"/>
+				<xs:element ref="SpecialInstructions" minOccurs="0"/>
+				<xs:element ref="PayerRemarks" minOccurs="0"/>
+				<xs:element ref="OperationalRemarks" minOccurs="0"/>
+				<xs:element ref="InterofficeRemarks" minOccurs="0"/>
+				<xs:element ref="RoutingInstructions" minOccurs="0"/>
+				<xs:element ref="FaxMessages" minOccurs="0"/>
+				<xs:element ref="E-mailMessages" minOccurs="0"/>
+				<xs:element ref="SMSMessages" minOccurs="0"/>
+				<xs:element ref="ShipperLocalRemarks" minOccurs="0"/>
+				<xs:element ref="ConsigneeLocalRemarks" minOccurs="0"/>
+				<xs:element ref="HandlingRemarks" minOccurs="0"/>
+				<xs:element ref="Clause" minOccurs="0"/>
+				<xs:element ref="TopClauses" minOccurs="0"/>
+				<xs:element ref="BottomClauses" minOccurs="0"/>
+				<xs:element ref="OSI" minOccurs="0"/>
+				<xs:element ref="LetterOfCredit" minOccurs="0"/>
+				<xs:element ref="FreeText" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Items" minOccurs="0"/>
+				<xs:element ref="Accessorials" minOccurs="0"/>
+				<xs:element ref="FormInstructions1" minOccurs="0"/>
+				<xs:element ref="FormInstructions2" minOccurs="0"/>
+				<xs:element ref="FormInstructions3" minOccurs="0"/>
+				<xs:element ref="FormInstructions4" minOccurs="0"/>
+				<xs:element ref="FormInstructions5" minOccurs="0"/>
+				<xs:element ref="FormInstructions6" minOccurs="0"/>
+				<xs:element ref="FormInstructions7" minOccurs="0"/>
+				<xs:element ref="FormInstructions8" minOccurs="0"/>
+				<xs:element ref="FormInstructions9" minOccurs="0"/>
+				<xs:element ref="FormInstructions10" minOccurs="0"/>
+				<xs:element ref="FormInstructions11" minOccurs="0"/>
+				<xs:element ref="FormInstructions12" minOccurs="0"/>
+				<xs:element ref="FormInstructions13" minOccurs="0"/>
+				<xs:element ref="FormInstructions14" minOccurs="0"/>
+				<xs:element ref="FormInstructions15" minOccurs="0"/>
+				<xs:element ref="FormInstructions16" minOccurs="0"/>
+				<xs:element ref="BookRefName" minOccurs="0"/>
+				<xs:element ref="Signature" minOccurs="0"/>
+				<xs:element ref="AWBDate" minOccurs="0"/>
+				<xs:element ref="Place" minOccurs="0"/>
+				<xs:element ref="OnHands" minOccurs="0"/>
+				<xs:element ref="EditGoodsDescFlag" minOccurs="0"/>
+				<xs:element ref="DescriptionOfGoodsFormat" minOccurs="0"/>
+				<xs:element ref="BLCode" minOccurs="0"/>
+				<xs:element ref="NumberOfOrignals" minOccurs="0"/>
+				<xs:element ref="OriginalRated" minOccurs="0"/>
+				<xs:element ref="CopiesWithFreight" minOccurs="0"/>
+				<xs:element ref="CopiesRated" minOccurs="0"/>
+				<xs:element ref="CopiesWithoutFreight" minOccurs="0"/>
+				<xs:element ref="DeclaredCargoValue" minOccurs="0"/>
+				<xs:element ref="DeclaredCargoValueCurrency" minOccurs="0"/>
+				<xs:element ref="FreightPayable" minOccurs="0"/>
+				<xs:element ref="FreightOF" minOccurs="0"/>
+				<xs:element ref="FreightOrigin" minOccurs="0"/>
+				<xs:element ref="FreightDest" minOccurs="0"/>
+				<xs:element ref="FreightPayableCode" minOccurs="0"/>
+				<xs:element ref="FreightPayableName" minOccurs="0"/>
+				<xs:element ref="FreightPayableCodeState" minOccurs="0"/>
+				<xs:element ref="FreightPayableCodeCtryCode" minOccurs="0"/>
+				<xs:element ref="EDNNumber" minOccurs="0"/>
+				<xs:element ref="PlaceOfIssue" minOccurs="0"/>
+				<xs:element ref="PlaceOfIssueCode" minOccurs="0"/>
+				<xs:element ref="PlaceOfIssueState" minOccurs="0"/>
+				<xs:element ref="PlaceOfIssueCtryCode" minOccurs="0"/>
+				<xs:element ref="DateOfIssue" minOccurs="0"/>
+				<xs:element ref="BLDate" minOccurs="0"/>
+				<xs:element ref="AES" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AESPOSTState" minOccurs="0"/>
+				<xs:element ref="IssuingUser" minOccurs="0"/>
+				<xs:element ref="SubHouse" minOccurs="0"/>
+				<xs:element ref="RecoveryTerminal" minOccurs="0"/>
+				<xs:element ref="ITNumber" minOccurs="0"/>
+				<xs:element ref="ITDate" minOccurs="0"/>
+				<xs:element ref="ITPort" minOccurs="0"/>
+				<xs:element ref="ITPortState" minOccurs="0"/>
+				<xs:element ref="ITPortCtryCode" minOccurs="0"/>
+				<xs:element ref="FreeTimeExpDate" minOccurs="0"/>
+				<xs:element ref="GeneralOrderDate" minOccurs="0"/>
+				<xs:element ref="GeneralOrderWarehouse" minOccurs="0"/>
+				<xs:element ref="PortOfEntry" minOccurs="0"/>
+				<xs:element ref="PortOfEntryState" minOccurs="0"/>
+				<xs:element ref="PortOfEntryCtryCode" minOccurs="0"/>
+				<xs:element ref="IncludeCharges" minOccurs="0"/>
+				<xs:element ref="Milestones" minOccurs="0"/>
+				<xs:element ref="AWBREGImpRef" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AirLocationDateTime">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PickUpLocation" minOccurs="0"/>
+				<xs:element ref="PickUpCode" minOccurs="0"/>
+				<xs:element ref="PickUpDateTime" minOccurs="0"/>
+				<xs:element ref="PickUpCountryCode" minOccurs="0"/>
+				<xs:element ref="DeliveryCountryCode" minOccurs="0"/>
+				<xs:element ref="PickUpEndDateTime" minOccurs="0"/>
+				<xs:element ref="ScheduledPickupDatetime" minOccurs="0"/>
+				<xs:element ref="RequestedDeliveryDateTime" minOccurs="0"/>
+				<xs:element ref="ScheduledDeliveryDateTime" minOccurs="0"/>
+				<xs:element ref="DueDateTime" minOccurs="0"/>
+				<xs:element ref="MainLocation" minOccurs="0"/>
+				<xs:element ref="MainCode" minOccurs="0"/>
+				<xs:element ref="MainLocationCountryCode" minOccurs="0"/>
+				<xs:element ref="MainDateTime" minOccurs="0"/>
+				<xs:element ref="ArrivalLocation" minOccurs="0"/>
+				<xs:element ref="ArrivalCode" minOccurs="0"/>
+				<xs:element ref="ArrivalLocationCountryCode" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="Service" minOccurs="0"/>
+				<xs:element ref="Mawb" minOccurs="0"/>
+				<xs:element ref="ExternalMawb" minOccurs="0"/>
+				<xs:element ref="Routing" minOccurs="0"/>
+				<xs:element ref="DeliveryCode" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OceanLocationDateTime">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PickUpDateTime" minOccurs="0"/>
+				<xs:element ref="DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="DepartureDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="DepartureDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="ArrivalDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="DeliveryDateTime" minOccurs="0"/>
+				<xs:element ref="ScheduledPickupDatetime" minOccurs="0"/>
+				<xs:element ref="RequestedDeliveryDateTime" minOccurs="0"/>
+				<xs:element ref="ScheduledDeliveryDateTime" minOccurs="0"/>
+				<xs:element ref="CloseDate" minOccurs="0"/>
+				<xs:element ref="Vessel" minOccurs="0"/>
+				<xs:element ref="VesselCode" minOccurs="0"/>
+				<xs:element ref="VesselCallSign" minOccurs="0"/>
+				<xs:element ref="AMSVesselCode" minOccurs="0"/>
+				<xs:element ref="VesselCountryOfRegistry" minOccurs="0"/>
+				<xs:element ref="Voyage" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceipt" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptLongitude" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptLatitude" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptService" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptCode" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryLongitude" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryLatitude" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptState" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptCtryCode" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptScheduleK" minOccurs="0"/>
+				<xs:element ref="PlaceOfReceiptScheduleD" minOccurs="0"/>
+				<xs:element ref="PortOfLoading" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingLongitude" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingLatitude" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingCode" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingState" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingCtryCode" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingScheduleK" minOccurs="0"/>
+				<xs:element ref="PortOfLoadingScheduleD" minOccurs="0"/>
+				<xs:element ref="PortOfDischarge" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeLongitude" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeLatitude" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeCode" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeState" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeCtryCode" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeCtry" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeScheduleK" minOccurs="0"/>
+				<xs:element ref="PortOfDischargeScheduleD" minOccurs="0"/>
+				<xs:element ref="PlaceOfDelivery" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryCode" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryService" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryState" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryCtryCode" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryCtry" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryScheduleK" minOccurs="0"/>
+				<xs:element ref="PlaceOfDeliveryScheduleD" minOccurs="0"/>
+				<xs:element ref="MoveTypePLR" minOccurs="0"/>
+				<xs:element ref="MoveTypePOL" minOccurs="0"/>
+				<xs:element ref="MoveTypePOD" minOccurs="0"/>
+				<xs:element ref="MoveTypePLD" minOccurs="0"/>
+				<xs:element ref="SCACCode" minOccurs="0"/>
+				<xs:element ref="OceanLegs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Routing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Route1To" minOccurs="0"/>
+				<xs:element ref="Route1Carr" minOccurs="0"/>
+				<xs:element ref="Route1Flight" minOccurs="0"/>
+				<xs:element ref="Route1DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="Route1DepartureDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="Route1DepartureDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="Route1ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="Route2To" minOccurs="0"/>
+				<xs:element ref="Route2Carr" minOccurs="0"/>
+				<xs:element ref="Route2Flight" minOccurs="0"/>
+				<xs:element ref="Route2DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="Route2DepartureDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="Route2DepartureDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="Route2ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="Route3To" minOccurs="0"/>
+				<xs:element ref="Route3Carr" minOccurs="0"/>
+				<xs:element ref="Route3Flight" minOccurs="0"/>
+				<xs:element ref="Route3DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="Route3DepartureDateTimeUTC" minOccurs="0"/>
+				<xs:element ref="Route3DepartureDateTimeTZ" minOccurs="0"/>
+				<xs:element ref="Route3ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute1To" minOccurs="0"/>
+				<xs:element ref="ActualRoute1Carr" minOccurs="0"/>
+				<xs:element ref="ActualRoute1Flight" minOccurs="0"/>
+				<xs:element ref="ActualRoute1DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute1ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute2To" minOccurs="0"/>
+				<xs:element ref="ActualRoute2Carr" minOccurs="0"/>
+				<xs:element ref="ActualRoute2Flight" minOccurs="0"/>
+				<xs:element ref="ActualRoute2DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute2ArrivalDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute3To" minOccurs="0"/>
+				<xs:element ref="ActualRoute3Carr" minOccurs="0"/>
+				<xs:element ref="ActualRoute3Flight" minOccurs="0"/>
+				<xs:element ref="ActualRoute3DepartureDateTime" minOccurs="0"/>
+				<xs:element ref="ActualRoute3ArrivalDateTime" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LineItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PrintCharge" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrintCharge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreightPayableAt" minOccurs="0"/>
+				<xs:element ref="ChargeLine" minOccurs="0"/>
+				<xs:element ref="ChargeCode" minOccurs="0"/>
+				<xs:element ref="ChargeDescription" minOccurs="0"/>
+				<xs:element ref="Rate" minOccurs="0"/>
+				<xs:element ref="BLOriginal" minOccurs="0"/>
+				<xs:element ref="BLCopy" minOccurs="0"/>
+				<xs:element ref="PrepaidOrCollect" minOccurs="0"/>
+				<xs:element ref="Amount" minOccurs="0"/>
+				<xs:element ref="Currency" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Item" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContainerNumber" minOccurs="0"/>
+				<xs:element ref="ContainerType" minOccurs="0"/>
+				<xs:element ref="Seal1" minOccurs="0"/>
+				<xs:element ref="Seal2" minOccurs="0"/>
+				<xs:element ref="Seal3" minOccurs="0"/>
+				<xs:element ref="Seal4" minOccurs="0"/>
+				<xs:element ref="TransitBL" minOccurs="0"/>
+				<xs:element ref="InTransitNumber" minOccurs="0"/>
+				<xs:element ref="InTransitPort" minOccurs="0"/>
+				<xs:element ref="InTransitDate" minOccurs="0"/>
+				<xs:element ref="Temp" minOccurs="0"/>
+				<xs:element ref="Pieces" minOccurs="0"/>
+				<xs:element ref="Kind" minOccurs="0"/>
+				<xs:element ref="ActualWeight" minOccurs="0"/>
+				<xs:element ref="ChargeableWeight" minOccurs="0"/>
+				<xs:element ref="Volume" minOccurs="0"/>
+				<xs:element ref="Dimensions" minOccurs="0"/>
+				<xs:element ref="DeclaredCargoValue" minOccurs="0"/>
+				<xs:element ref="DeclaredCargoValueCurrency" minOccurs="0"/>
+				<xs:element ref="SOLASDocCDate" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDate" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperNo" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperName1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperName2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperAdd1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperAdd2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperZipCode" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperCity" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperState" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperCont" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperPhone" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperMail" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthno" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthName1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthName2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthAdd1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMSAuthAdd2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthZipCode" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthCity" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthState" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthCont" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthPhone" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthEmail" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespno" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespName1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespName2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespAdd1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMSRespAdd2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespZipCode" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespCity" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespState" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespCont" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespPhone" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespEmail" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigno" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigName1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigName2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigAdd1" minOccurs="0"/>
+				<xs:element ref="SOLASVGMSWeigAdd2" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigZipCode" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigCity" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigState" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigCont" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigPhone" minOccurs="0"/>
+				<xs:element ref="SOLASVGMWeigEmail" minOccurs="0"/>
+				<xs:element ref="SOLASVGMMethod" minOccurs="0"/>
+				<xs:element ref="SOLASVGM" minOccurs="0"/>
+				<xs:element ref="SOLASVGMUom" minOccurs="0"/>
+				<xs:element ref="SOLASVGMCargoWeight" minOccurs="0"/>
+				<xs:element ref="SOLASVGMCargoWeightUOM" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDunnageWeight" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDunnageUOM" minOccurs="0"/>
+				<xs:element ref="SOLASVGMTareWeight" minOccurs="0"/>
+				<xs:element ref="SOLASVGMTareUOM" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDetDate" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDetLoca" minOccurs="0"/>
+				<xs:element ref="SOLASVGMDetLoct" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespCert" minOccurs="0"/>
+				<xs:element ref="SOLASVGMRespRef" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthCert" minOccurs="0"/>
+				<xs:element ref="SOLASVGMAuthRef" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperCert" minOccurs="0"/>
+				<xs:element ref="SOLASVGMShipperRef" minOccurs="0"/>
+				<xs:element ref="SOLASVGMVerificationDate" minOccurs="0"/>
+				<xs:element ref="SOLASVGMVerificationSig" minOccurs="0"/>
+				<xs:element ref="MarksAndNumbers" minOccurs="0"/>
+				<xs:element ref="GoodsDescriptions" minOccurs="0"/>
+				<xs:element ref="EditedDesc" minOccurs="0"/>
+				<xs:element ref="ULDIs" minOccurs="0"/>
+				<xs:element ref="CargoType" minOccurs="0"/>
+				<xs:element ref="ItemReferences" minOccurs="0"/>
+				<xs:element ref="BIR" minOccurs="0"/>
+				<xs:element ref="ItemExtendedTexts" minOccurs="0"/>
+				<xs:element ref="ItemNo" minOccurs="0"/>
+				<xs:element ref="FreeText" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Dimensions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Dimension" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Dimension">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Pieces" minOccurs="0"/>
+				<xs:element ref="Kind" minOccurs="0"/>
+				<xs:element ref="Length" minOccurs="0"/>
+				<xs:element ref="Width" minOccurs="0"/>
+				<xs:element ref="Height" minOccurs="0"/>
+				<xs:element ref="DimensionUOM" minOccurs="0"/>
+				<xs:element ref="ActualWeight" minOccurs="0"/>
+				<xs:element ref="WeightUOM" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VatOnBl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VatBl" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VatBl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VatPart" minOccurs="0"/>
+				<xs:element ref="VatAmount" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Clause">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Code" minOccurs="0"/>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Reason">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Code" minOccurs="0"/>
+				<xs:element ref="Text" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FreeText">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Code" minOccurs="0"/>
+				<xs:element ref="Content" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Milestones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Milestone" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PODFullDateTime" minOccurs="0"/>
+				<xs:element ref="PODFullSignature" minOccurs="0"/>
+				<xs:element ref="PODPartialDateTime" minOccurs="0"/>
+				<xs:element ref="PODPartialSignature" minOccurs="0"/>
+				<xs:element ref="PODCompleteDateTime" minOccurs="0"/>
+				<xs:element ref="PODCompleteSignature" minOccurs="0"/>
+				<xs:element ref="DocsToBrokerDateTime" minOccurs="0"/>
+				<xs:element ref="DocsToBrokerSignature" minOccurs="0"/>
+				<xs:element ref="FinalPOD" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Milestone">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name" minOccurs="0"/>
+				<xs:element ref="Description" minOccurs="0"/>
+				<xs:element ref="DateTime" minOccurs="0"/>
+				<xs:element ref="DateTimeTZ" minOccurs="0"/>
+				<xs:element ref="DateTimeUtc" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsigneeReferences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CseeReference" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CseeReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RefID" minOccurs="0"/>
+				<xs:element ref="RefValue" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServiceLevel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Code" minOccurs="0"/>
+				<xs:element ref="Description" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Category">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Cat" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TotalCharges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TotalFreightAmount" minOccurs="0"/>
+				<xs:element ref="TotalValuationCharges" minOccurs="0"/>
+				<xs:element ref="TotalTaxAmount" minOccurs="0"/>
+				<xs:element ref="OtherChargesDueAgent" minOccurs="0"/>
+				<xs:element ref="OtherChargesDueCarrier" minOccurs="0"/>
+				<xs:element ref="GrandTotalAmount" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DocumentDeliveries">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DocumentDelivery" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DocumentDelivery">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DeliveryBy" minOccurs="0"/>
+				<xs:element ref="DeliveryMethod" minOccurs="0"/>
+				<xs:element ref="SeperateInvoice" minOccurs="0"/>
+				<xs:element ref="WaitDays" minOccurs="0"/>
+				<xs:element ref="IntRefParty1" minOccurs="0"/>
+				<xs:element ref="IntRefQual1" minOccurs="0"/>
+				<xs:element ref="IntRefParty2" minOccurs="0"/>
+				<xs:element ref="IntRefQual2" minOccurs="0"/>
+				<xs:element ref="IntRefParty3" minOccurs="0"/>
+				<xs:element ref="IntRefQual3" minOccurs="0"/>
+				<xs:element ref="IntRefParty4" minOccurs="0"/>
+				<xs:element ref="IntRefQual4" minOccurs="0"/>
+				<xs:element ref="IntRefParty5" minOccurs="0"/>
+				<xs:element ref="IntRefQual5" minOccurs="0"/>
+				<xs:element ref="AttachmentLists" minOccurs="0"/>
+				<xs:element ref="EmailList" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttachmentLists">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AttachmentList" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttachmentList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AttachmentDocType" minOccurs="0"/>
+				<xs:element ref="Required" minOccurs="0"/>
+				<xs:element ref="Copies" minOccurs="0"/>
+				<xs:element ref="Sequence" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmailList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="eMailAddress" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RODetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AirCode" minOccurs="0"/>
+				<xs:element ref="SeaCode" minOccurs="0"/>
+				<xs:element ref="RoadCode" minOccurs="0"/>
+				<xs:element ref="OverDimensional" minOccurs="0"/>
+				<xs:element ref="Stackable" minOccurs="0"/>
+				<xs:element ref="FaxCode" minOccurs="0"/>
+				<xs:element ref="EmailCode" minOccurs="0"/>
+				<xs:element ref="InvCode" minOccurs="0"/>
+				<xs:element ref="HouseBillCode" minOccurs="0"/>
+				<xs:element ref="ROCarrier" minOccurs="0"/>
+				<xs:element ref="ROVessel" minOccurs="0"/>
+				<xs:element ref="ROVesselCode" minOccurs="0"/>
+				<xs:element ref="ROVoyage" minOccurs="0"/>
+				<xs:element ref="ConsigneeReferences" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DFloDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserName" minOccurs="0"/>
+				<xs:element ref="PrinterGroup" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ItemReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Party" minOccurs="0"/>
+				<xs:element ref="Qualifier" minOccurs="0"/>
+				<xs:element ref="Text" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ItemReferences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ItemReference" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HandlingRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Code" minOccurs="0"/>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MarksAndNumbers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Marks" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RecoveryTerminal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+				<xs:element ref="TaxID" minOccurs="0"/>
+				<xs:element ref="FirmsCode" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GoodsDescriptions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GoodsDescription" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EditedDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DESCRIPTION" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GeneralBookingRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipperRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsigneeRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpecialInstructions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PayerRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationalRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InterofficeRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoutingInstructions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FaxMessages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="E-mailMessages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SMSMessages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipperLocalRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConsigneeLocalRemarks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remark" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExtendedTexts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ExtendedText" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExtendedText">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Type" minOccurs="0"/>
+				<xs:element ref="Text" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ItemExtendedTexts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ItemExtendedText" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ItemExtendedText">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Type" minOccurs="0"/>
+				<xs:element ref="Text" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VendorNumber">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VendorNumberConsol1" minOccurs="0"/>
+				<xs:element ref="VendorNumberConsol2" minOccurs="0"/>
+				<xs:element ref="VendorNumberConsol3" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TopClauses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TopClause1" minOccurs="0"/>
+				<xs:element ref="TopClause2" minOccurs="0"/>
+				<xs:element ref="TopClause3" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BottomClauses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BottomClause1" minOccurs="0"/>
+				<xs:element ref="BottomClause2" minOccurs="0"/>
+				<xs:element ref="BottomClause3" minOccurs="0"/>
+				<xs:element ref="BottomClause4" minOccurs="0"/>
+				<xs:element ref="BottomClause5" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ULDIs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ULDI" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ULDI">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Sequence" minOccurs="0"/>
+				<xs:element ref="Pieces" minOccurs="0"/>
+				<xs:element ref="Weight" minOccurs="0"/>
+				<xs:element ref="WeightLB" minOccurs="0"/>
+				<xs:element ref="Rateclass" minOccurs="0"/>
+				<xs:element ref="Commodity" minOccurs="0"/>
+				<xs:element ref="ChargeableWeight" minOccurs="0"/>
+				<xs:element ref="Rate" minOccurs="0"/>
+				<xs:element ref="Total1" minOccurs="0"/>
+				<xs:element ref="ContainerNumber" minOccurs="0"/>
+				<xs:element ref="ContainerType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AESBookingNumber" minOccurs="0"/>
+				<xs:element ref="AESITNNo" minOccurs="0"/>
+				<xs:element ref="AESInBoundCode" minOccurs="0"/>
+				<xs:element ref="AESInBoundNumber" minOccurs="0"/>
+				<xs:element ref="AESItem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AESDown" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AESItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AESLicense" minOccurs="0"/>
+				<xs:element ref="AESECCN" minOccurs="0"/>
+				<xs:element ref="AESUSML" minOccurs="0"/>
+				<xs:element ref="License" minOccurs="0"/>
+				<xs:element ref="AESShipper" minOccurs="0"/>
+				<xs:element ref="AESConsignee" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AESShipper">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AESConsignee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountNumber" minOccurs="0"/>
+				<xs:element ref="AliasAccountNumber" minOccurs="0"/>
+				<xs:element ref="Address" minOccurs="0"/>
+				<xs:element ref="Phone" minOccurs="0"/>
+				<xs:element ref="Email" minOccurs="0"/>
+				<xs:element ref="Contact" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OnHands">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OnHand" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OnHand">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OHNumber" minOccurs="0"/>
+				<xs:element ref="OHWeight" minOccurs="0"/>
+				<xs:element ref="OHPieces" minOccurs="0"/>
+				<xs:element ref="OHVolume" minOccurs="0"/>
+				<xs:element ref="OHDescription" minOccurs="0"/>
+				<xs:element ref="OHValueCurrency" minOccurs="0"/>
+				<xs:element ref="OHValueAmount" minOccurs="0"/>
+				<xs:element ref="OHShipper" minOccurs="0"/>
+				<xs:element ref="OHShipperAdd1" minOccurs="0"/>
+				<xs:element ref="OHShipperAdd2" minOccurs="0"/>
+				<xs:element ref="OHShipperAdd3" minOccurs="0"/>
+				<xs:element ref="OHShipperAdd4" minOccurs="0"/>
+				<xs:element ref="OHConsignee" minOccurs="0"/>
+				<xs:element ref="OHConsigneeAdd1" minOccurs="0"/>
+				<xs:element ref="OHConsigneeAdd2" minOccurs="0"/>
+				<xs:element ref="OHConsigneeAdd3" minOccurs="0"/>
+				<xs:element ref="OHConsigneeAdd4" minOccurs="0"/>
+				<xs:element ref="Assembly" minOccurs="0"/>
+				<xs:element ref="OHReferences" minOccurs="0"/>
+				<xs:element ref="OHAESPOSTState" minOccurs="0"/>
+				<xs:element ref="AES" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OHReferences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OHReference" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OHReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OHParty" minOccurs="0"/>
+				<xs:element ref="OHQualifier" minOccurs="0"/>
+				<xs:element ref="OHText" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DescriptionOfGoodsFormat">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DESCRIPTION" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Accessorials">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Value" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartyCustRefs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartyCustRef" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartyCustRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CRefID" minOccurs="0"/>
+				<xs:element ref="CRefIDValue" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OceanLegs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OceanLeg" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OceanLeg">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OLNo" minOccurs="0"/>
+				<xs:element ref="OLCarrierCode" minOccurs="0"/>
+				<xs:element ref="OLCarrierName" minOccurs="0"/>
+				<xs:element ref="OLSCACCode" minOccurs="0"/>
+				<xs:element ref="OLVessel" minOccurs="0"/>
+				<xs:element ref="OLVesselCode" minOccurs="0"/>
+				<xs:element ref="OLVesselCallSign" minOccurs="0"/>
+				<xs:element ref="OLAMSVesselCode" minOccurs="0"/>
+				<xs:element ref="OLVesselCountryOfRegistry" minOccurs="0"/>
+				<xs:element ref="OLVoyage" minOccurs="0"/>
+				<xs:element ref="OLPOL" minOccurs="0"/>
+				<xs:element ref="OLPOLCode" minOccurs="0"/>
+				<xs:element ref="OLPOLState" minOccurs="0"/>
+				<xs:element ref="OLPOLCtryCode" minOccurs="0"/>
+				<xs:element ref="OLPOLScheduleK" minOccurs="0"/>
+				<xs:element ref="OLPOLScheduleD" minOccurs="0"/>
+				<xs:element ref="OLPOD" minOccurs="0"/>
+				<xs:element ref="OLPODCode" minOccurs="0"/>
+				<xs:element ref="OLPODState" minOccurs="0"/>
+				<xs:element ref="OLPODCtryCode" minOccurs="0"/>
+				<xs:element ref="OLPODScheduleK" minOccurs="0"/>
+				<xs:element ref="OLPODScheduleD" minOccurs="0"/>
+				<xs:element ref="OLETDDateTime" minOccurs="0"/>
+				<xs:element ref="OLETADateTime" minOccurs="0"/>
+				<xs:element ref="OLATDDateTime" minOccurs="0"/>
+				<xs:element ref="OLATADateTime" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="DelBy">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value=" "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="moveType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="L"/>
+			<xs:enumeration value="F"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value=" "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DelMethod">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value=" "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="yesNoField">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value=" "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="paymentTerms">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value=" "/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="countryCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="refQualifier">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="partyCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="locationCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="locationText">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string100">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="stateField">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="phoneField">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string1">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string15">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string4">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string3">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string5">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string6">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="bookingNumber">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="17"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="customerNumber">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="dossierNumber">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UOM">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="I"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="boxNumber">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="boxType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="currencyField">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="amountField">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="volumeField">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sequenceNo">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="numberField">
+		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="longString">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="trueFalseField">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="True"/>
+			<xs:enumeration value="False"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OFSinvoiceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Debit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="2"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Credit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="3"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Sub invoice debit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="4"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Sub invoice credit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="5"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Consolidated invoice</xs:documentation>
+				</xs:annotation>-->
+			<xs:enumeration value="6"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Accrual</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="7"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Future use</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="11"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Merge debit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="12"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Merge credit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="13"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Merge sub invoice debit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="14"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Merge sub invoice credit note</xs:documentation>
+				</xs:annotation> -->
+			<xs:enumeration value="15"/>
+				<!-- <xs:annotation>
+					<xs:documentation>Merge consolidated invoice</xs:documentation>
+				</xs:annotation> -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string20">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string35">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string256">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FrtAreaField">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="MasterFormCtry" type="countryCode"/>
+	<xs:element name="MasterFormName" type="string100"/>
+	<xs:element name="Master" type="bookingNumber"/>
+	<xs:element name="ExternalMawb" type="bookingNumber"/>
+	<xs:element name="CevaBookingNumberHouse" type="bookingNumber"/>
+	<xs:element name="CevaBookingNumberMaster" type="bookingNumber"/>
+	<xs:element name="MasterFrom" type="locationCode"/>
+	<xs:element name="MasterTo" type="locationCode"/>
+	<xs:element name="DossierNumber" type="dossierNumber"/>
+	<xs:element name="BookRefName" type="string100"/>
+	<xs:element name="ChargeDescription" type="string100"/>
+	<xs:element name="PODPartialSignature" type="string100"/>
+	<xs:element name="PODFullSignature" type="string100"/>
+	<xs:element name="PODCompleteSignature" type="string100"/>
+	<xs:element name="DocsToBrokerSignature" type="string100"/>
+	<xs:element name="UnitOfMeasure" type="UOM"/>
+	<xs:element name="DimensionUOM" type="UOM"/>
+	<xs:element name="WeightUOM" type="UOM"/>
+	<xs:element name="Qualifier" type="refQualifier"/>
+	<xs:element name="DomesticHouse" type="bookingNumber"/>
+	<xs:element name="ContainerNumber" type="boxNumber"/>
+	<xs:element name="ContainerType" type="boxType"/>
+	<xs:element name="PickUpCode" type="locationCode"/>
+	<xs:element name="ArrivalCode" type="locationCode"/>
+	<xs:element name="DeliveryCode" type="locationCode"/>
+	<xs:element name="MainCode" type="locationCode"/>
+	<xs:element name="PlaceOfReceipt" type="string100"/>
+	<xs:element name="PlaceOfReceiptLatitude" type="xs:decimal"/>
+	<xs:element name="PlaceOfReceiptLongitude" type="xs:decimal"/>
+	<xs:element name="PlaceOfIssue" type="string100"/>
+	<xs:element name="PlaceOfIssueCode" type="locationCode"/>
+	<xs:element name="MasterPlaceOfIssueCode" type="locationCode"/>
+	<xs:element name="PortOfLoading" type="string100"/>
+	<xs:element name="PortOfLoadingLongitude" type="xs:decimal"/>
+	<xs:element name="PortOfLoadingLatitude" type="xs:decimal"/>
+	<xs:element name="PortOfDischarge" type="string100"/>
+	<xs:element name="PortOfEntry" type="string100"/>
+	<xs:element name="PlaceOfDelivery" type="string100"/>
+	<xs:element name="PlaceOfIssueState" type="stateField"/>
+	<xs:element name="PlaceOfReceiptState" type="stateField"/>
+	<xs:element name="PortOfEntryState" type="stateField"/>
+	<xs:element name="PortOfLoadingState" type="stateField"/>
+	<xs:element name="PortOfDischargeState" type="stateField"/>
+	<xs:element name="PlaceOfDeliveryState" type="stateField"/>
+	<xs:element name="ITPortState" type="stateField"/>
+	<xs:element name="FreightPayableCodeState" type="stateField"/>
+	<xs:element name="PickUpLocation" type="locationText"/>
+	<xs:element name="MainLocation" type="locationText"/>
+	<xs:element name="ArrivalLocation" type="locationText"/>
+	<xs:element name="PortOfLoadingCode" type="locationCode"/>
+	<xs:element name="PlaceOfReceiptCode" type="locationCode"/>
+	<xs:element name="PlaceOfDeliveryCode" type="locationCode"/>
+	<xs:element name="PlaceOfDeliveryLongitude" type="xs:decimal"/>
+	<xs:element name="PlaceOfDeliveryLatitude" type="xs:decimal"/>
+	<xs:element name="PortOfDischargeLongitude" type="xs:decimal"/>
+	<xs:element name="PortOfDischargeLatitude" type="xs:decimal"/>
+	<xs:element name="PortOfDischargeCode" type="locationCode"/>
+	<xs:element name="PlaceOfDeliveryCtry" type="locationText"/>
+	<xs:element name="PortOfDischargeCtry" type="locationText"/>
+	<xs:element name="PortOfEntryCtryCode" type="countryCode"/>
+	<xs:element name="PortOfLoadingCtryCode" type="countryCode"/>
+	<xs:element name="PlaceOfIssueCtryCode" type="countryCode"/>
+	<xs:element name="MainLocationCountryCode" type="countryCode"/>
+	<xs:element name="PlaceOfDeliveryCtryCode" type="countryCode"/>
+	<xs:element name="PortOfDischargeCtryCode" type="countryCode"/>
+	<xs:element name="PlaceOfReceiptCtryCode" type="countryCode"/>
+	<xs:element name="ArrivalLocationCountryCode" type="countryCode"/>
+	<xs:element name="FreightPayableCodeCtryCode" type="countryCode"/>
+	<xs:element name="ITPortCtryCode" type="countryCode"/>
+	<xs:element name="MoveTypePLD" type="moveType"/>
+	<xs:element name="MoveTypePLR" type="moveType"/>
+	<xs:element name="MoveTypePOD" type="moveType"/>
+	<xs:element name="MoveTypePOL" type="moveType"/>
+	<xs:element name="User" type="string10"/>
+	<xs:element name="IssuingUser" type="string10"/>
+	<xs:element name="TotalFreightAmount" type="amountField"/>
+	<xs:element name="TotalTaxAmount" type="amountField"/>
+	<xs:element name="VatAmount" type="amountField"/>
+	<xs:element name="OtherChargesDueAgent" type="amountField"/>
+	<xs:element name="Rate" type="amountField"/>
+	<xs:element name="CTField" type="countryCode"/>
+	<xs:element name="Cset" type="countryCode"/>
+	<xs:element name="Name" type="string100"/>
+	<xs:element name="WeightToVolumeRatio" type="string10"/>
+	<xs:element name="Marks" type="string100"/>
+	<xs:element name="DeclaredCargoValue" type="amountField"/>
+	<xs:element name="SubHouse" type="bookingNumber"/>
+	<xs:element name="TotalPrepaidOrCollect" type="paymentTerms"/>
+	<xs:element name="TotalValuationCharges" type="amountField"/>
+	<xs:element name="House" type="bookingNumber"/>
+	<xs:element name="LinerBookNo" type="bookingNumber"/>
+	<xs:element name="Mawb" type="bookingNumber"/>
+	<xs:element name="DangerousGoods" type="yesNoField"/>
+	<xs:element name="DangerousGoodsCLASS" type="string10"/>
+	<xs:element name="DangerousGoodsUNNumber" type="string10"/>
+	<xs:element name="ChargeCode" type="string10"/>
+	<xs:element name="ChargeLine" type="string10"/>
+	<xs:element name="KnownShipper" type="yesNoField"/>
+	<xs:element name="FinalPOD" type="yesNoField"/>
+	<xs:element name="AccountingInformation" type="longString"/>
+	<xs:element name="TaxID" type="bookingNumber"/>
+	<xs:element name="DestinationAgent" type="string100"/>
+	<xs:element name="OriginAgent" type="string100"/>
+	<xs:element name="ExporterCompNumber" type="bookingNumber"/>
+	<xs:element name="ImporterCompNumber" type="bookingNumber"/>
+	<xs:element name="GoodsDescription" type="string100"/>
+	<xs:element name="Signature" type="string100"/>
+	<xs:element name="TransitBL" type="bookingNumber"/>
+	<xs:element name="InTransitNumber" type="string100"/>
+	<xs:element name="InTransitPort" type="locationCode"/>
+	<xs:element name="FirmsCode" type="customerNumber"/>
+	<xs:element name="AliasAccountNumber" type="string50"/>
+	<xs:element name="UserName" type="string50"/>
+	<xs:element name="VesselCode" type="string10"/>
+	<xs:element name="CubicCR" type="string10"/>
+	<xs:element name="Volume" type="volumeField"/>
+	<xs:element name="Party" type="partyCode"/>
+	<xs:element name="Place" type="locationText"/>
+	<xs:element name="Service" type="string5"/>
+	<xs:element name="Amount" type="amountField"/>
+	<xs:element name="Total1" type="amountField"/>
+	<xs:element name="Commcode" type="string15"/>
+	<xs:element name="Sender" type="string50"/>
+	<xs:element name="Mode" type="string50"/>
+	<xs:element name="Receiver" type="string50"/>
+	<xs:element name="From" type="locationCode"/>
+	<xs:element name="To" type="locationCode"/>
+	<xs:element name="FromLatitude" type="xs:decimal"/>
+	<xs:element name="FromLongitude" type="xs:decimal"/>
+	<xs:element name="ToLongitude" type="xs:decimal"/>
+	<xs:element name="ToLatitude" type="xs:decimal"/>	
+	<xs:element name="PrepaidOrCollect" type="paymentTerms"/>
+	<xs:element name="SecurityNum" type="string50"/>
+	<xs:element name="Seal1" type="string10"/>
+	<xs:element name="Seal2" type="string10"/>
+	<xs:element name="Seal3" type="string10"/>
+	<xs:element name="Seal4" type="string10"/>
+	<xs:element name="AWBREGImpRef" type="string50"/>
+	<xs:element name="Currency" type="currencyField"/>
+	<xs:element name="DeclaredCargoValueCurrency" type="currencyField"/>
+	<xs:element name="FormInstructions1" type="longString"/>
+	<xs:element name="FormInstructions2" type="longString"/>
+	<xs:element name="FormInstructions3" type="longString"/>
+	<xs:element name="FormInstructions4" type="longString"/>
+	<xs:element name="FormInstructions5" type="longString"/>
+	<xs:element name="FormInstructions6" type="longString"/>
+	<xs:element name="FormInstructions7" type="longString"/>
+	<xs:element name="FormInstructions8" type="longString"/>
+	<xs:element name="FormInstructions9" type="longString"/>
+	<xs:element name="FormInstructions10" type="longString"/>
+	<xs:element name="FormInstructions11" type="longString"/>
+	<xs:element name="FormInstructions12" type="longString"/>
+	<xs:element name="FormInstructions13" type="longString"/>
+	<xs:element name="FormInstructions14" type="longString"/>
+	<xs:element name="FormInstructions15" type="longString"/>
+	<xs:element name="FormInstructions16" type="longString"/>
+	<xs:element name="Form" type="string50"/>
+	<xs:element name="P1" type="string2"/>
+	<xs:element name="P2" type="string2"/>
+	<xs:element name="ExportBroker" type="customerNumber"/>
+	<xs:element name="ImportBroker" type="customerNumber"/>
+	<xs:element name="Email" type="longString"/>
+	<xs:element name="Contact" type="string50"/>
+	<xs:element name="Route1Carr" type="string4"/>
+	<xs:element name="Route2Carr" type="string4"/>
+	<xs:element name="Route3Carr" type="string4"/>
+	<xs:element name="Route1Flight" type="string6"/>
+	<xs:element name="Route2Flight" type="string6"/>
+	<xs:element name="Route3Flight" type="string6"/>
+	<xs:element name="ActualRoute1To" type="locationCode"/>
+	<xs:element name="ActualRoute2To" type="locationCode"/>
+	<xs:element name="ActualRoute3To" type="locationCode"/>
+	<xs:element name="ActualRoute1Carr" type="string4"/>
+	<xs:element name="ActualRoute2Carr" type="string4"/>
+	<xs:element name="ActualRoute3Carr" type="string4"/>
+	<xs:element name="ActualRoute1Flight" type="string6"/>
+	<xs:element name="ActualRoute2Flight" type="string6"/>
+	<xs:element name="ActualRoute3Flight" type="string6"/>
+	<xs:element name="OSI" type="customerNumber"/>
+	<xs:element name="Rateclass" type="string1"/>
+	<xs:element name="Commodity" type="string15"/>
+	<xs:element name="ShipmentReferenceNumber" type="string15"/>
+	<xs:element name="Purpose" type="string15"/>
+	<xs:element name="CarrierCode" type="string4"/>
+	<xs:element name="CarrierName" type="string50"/>
+	<xs:element name="SecurityText" type="string50"/>
+	<xs:element name="TStatus" type="string4"/>
+	<xs:element name="Name1" type="string100"/>
+	<xs:element name="Name2" type="string100"/>
+	<xs:element name="AddLine1" type="string100"/>
+	<xs:element name="AddLine2" type="string100"/>
+	<xs:element name="AddLine3" type="string100"/>
+	<xs:element name="AddLine4" type="string100"/>
+	<xs:element name="AddLine5" type="string100"/>
+	<xs:element name="Address1" type="string100"/>
+	<xs:element name="Address2" type="string100"/>
+	<xs:element name="City" type="string100"/>
+	<xs:element name="State" type="stateField"/>
+	<xs:element name="ZipCode" type="string10"/>
+	<xs:element name="Country" type="countryCode"/>
+	<xs:element name="Route1To" type="locationCode"/>
+	<xs:element name="Route2To" type="locationCode"/>
+	<xs:element name="Route3To" type="locationCode"/>
+	<xs:element name="AWBCurrency" type="currencyField"/>
+	<xs:element name="Vessel" type="string50"/>
+	<xs:element name="Voyage" type="string15"/>
+	<xs:element name="Height" type="amountField"/>
+	<xs:element name="Width" type="amountField"/>
+	<xs:element name="Length" type="amountField"/>
+	<xs:element name="Pieces" type="numberField" default="0"/>
+	<xs:element name="SLAC" type="string10"/>
+	<xs:element name="ChargeableWeight" type="volumeField"/>
+	<xs:element name="ActualWeight" type="volumeField"/>
+	<xs:element name="Weight" type="volumeField"/>
+	<xs:element name="WeightLB" type="volumeField"/>
+	<xs:element name="OtherChargesDueCarrier" type="amountField"/>
+	<xs:element name="GrandTotalAmount" type="amountField"/>
+	<xs:element name="CassCode" type="string4"/>
+	<xs:element name="IncoTerms" type="string3"/>
+	<xs:element name="AccountNumber" type="customerNumber"/>
+	<xs:element name="Longitude" type="xs:decimal"/>
+	<xs:element name="Latitude" type="xs:decimal"/>
+	<xs:element name="Phone" type="phoneField"/>
+	<xs:element name="NilCustomsValueIndicator" type="trueFalseField"/>
+	<xs:element name="NilCarriageValueIndicator" type="trueFalseField"/>
+	<xs:element name="NilInsuranceValueIndicator" type="trueFalseField"/>
+	<xs:element name="TotalDisbursementPrepaidIndicator" type="trueFalseField"/>
+	<xs:element name="CargoType" type="string2"/>
+	<xs:element name="EditGoodsDescFlag" type="yesNoField"/>
+	<xs:element name="IATACode" type="string15"/>
+	<xs:element name="Kind" type="string4"/>
+	<xs:element name="AESBookingNumber" type="bookingNumber"/>
+	<xs:element name="AESECCN" type="string5"/>
+	<xs:element name="AESUSML" type="string2"/>
+	<xs:element name="AESITNNo" type="string15"/>
+	<xs:element name="AESDown" type="string100"/>
+	<xs:element name="AESInBoundCode" type="string50"/>
+	<xs:element name="AESInBoundNumber" type="string50"/>
+	<xs:element name="AESLicense" type="string3"/>
+	<xs:element name="License" type="string10"/>
+	<xs:element name="CopiesWithFreight" type="numberField"/>
+	<xs:element name="CopiesWithoutFreight" type="numberField"/>
+	<xs:element name="PrinterGroup" type="string10"/>
+	<xs:element name="EDNNumber" type="string10"/>
+	<xs:element name="Code" type="string50"/>
+	<xs:element name="Description" type="string50"/>
+	<xs:element name="FreightOrigin" type="paymentTerms"/>
+	<xs:element name="FreightDest" type="paymentTerms"/>
+	<xs:element name="LetterOfCredit" type="yesNoField"/>
+	<xs:element name="Temp" type="string15"/>
+	<xs:element name="Content" type="string50"/>
+	<xs:element name="Remark" type="longString"/>
+	<xs:element name="Value" type="string50"/>
+	<xs:element name="GeneralOrderWarehouse" type="customerNumber"/>
+	<xs:element name="PlaceOfDeliveryService" type="string5"/>
+	<xs:element name="PlaceOfReceiptService" type="string5"/>
+	<xs:element name="ITPort" type="locationCode"/>
+	<xs:element name="ITNumber" type="string50"/>
+	<xs:element name="BLCode" type="string2"/>
+	<xs:element name="BLCopy" type="string1"/>
+	<xs:element name="IncludeCharges" type="yesNoField"/>
+	<xs:element name="FreightOF" type="paymentTerms"/>
+	<xs:element name="FreightPayable" type="paymentTerms"/>
+	<xs:element name="FreightPayableCode" type="locationCode"/>
+	<xs:element name="FreightPayableName" type="locationText"/>
+	<xs:element name="FreightPayableAt" type="locationCode"/>
+	<xs:element name="OriginalRated" type="string1"/>
+	<xs:element name="CopiesRated" type="string1"/>
+	<xs:element name="BLOriginal" type="bookingNumber"/>
+	<xs:element name="VatPart" type="customerNumber"/>
+	<xs:element name="Cat" type="string10"/>
+	<xs:element name="SeperateInvoice" type="yesNoField"/>
+	<xs:element name="WaitDays" type="sequenceNo"/>
+	<xs:element name="IntRefParty1" type="partyCode"/>
+	<xs:element name="IntRefQual1" type="refQualifier"/>
+	<xs:element name="IntRefParty2" type="partyCode"/>
+	<xs:element name="IntRefQual2" type="refQualifier"/>
+	<xs:element name="IntRefParty3" type="partyCode"/>
+	<xs:element name="IntRefQual3" type="refQualifier"/>
+	<xs:element name="IntRefParty4" type="partyCode"/>
+	<xs:element name="IntRefQual4" type="refQualifier"/>
+	<xs:element name="IntRefParty5" type="partyCode"/>
+	<xs:element name="IntRefQual5" type="refQualifier"/>
+	<xs:element name="AttachmentDocType" type="string10"/>
+	<xs:element name="Required" type="yesNoField"/>
+	<xs:element name="Copies" type="sequenceNo"/>
+	<xs:element name="Sequence" type="sequenceNo"/>
+	<xs:element name="eMailAddress" type="string100"/>
+	<xs:element name="BIR" type="string10"/>
+	<xs:element name="Type" type="string50"/>
+	<xs:element name="Text" type="string100"/>
+	<xs:element name="VendorNumberConsol1" type="customerNumber"/>
+	<xs:element name="VendorNumberConsol2" type="customerNumber"/>
+	<xs:element name="VendorNumberConsol3" type="customerNumber"/>
+	<xs:element name="TopClause1" type="longString"/>
+	<xs:element name="TopClause2" type="longString"/>
+	<xs:element name="TopClause3" type="longString"/>
+	<xs:element name="BottomClause1" type="longString"/>
+	<xs:element name="BottomClause2" type="longString"/>
+	<xs:element name="BottomClause3" type="longString"/>
+	<xs:element name="BottomClause4" type="longString"/>
+	<xs:element name="BottomClause5" type="longString"/>
+	<xs:element name="DeliveryBy" type="DelBy"/>
+	<xs:element name="DeliveryMethod" type="DelMethod"/>
+	<xs:element name="OHNumber" type="bookingNumber"/>
+	<xs:element name="OHWeight" type="volumeField"/>
+	<xs:element name="OHPieces" type="numberField" default="0"/>
+	<xs:element name="OHDescription" type="string100"/>
+	<xs:element name="OHShipper" type="string100"/>
+	<xs:element name="OHShipperAdd1" type="string100"/>
+	<xs:element name="OHShipperAdd2" type="string100"/>
+	<xs:element name="OHShipperAdd3" type="string100"/>
+	<xs:element name="OHShipperAdd4" type="string100"/>
+	<xs:element name="OHConsignee" type="string100"/>
+	<xs:element name="OHConsigneeAdd1" type="string100"/>
+	<xs:element name="OHConsigneeAdd2" type="string100"/>
+	<xs:element name="OHConsigneeAdd3" type="string100"/>
+	<xs:element name="OHConsigneeAdd4" type="string100"/>
+	<xs:element name="Assembly" type="string1"/>
+	<xs:element name="OHVolume" type="volumeField"/>
+	<xs:element name="OHValueAmount" type="amountField"/>
+	<xs:element name="OHValueCurrency" type="currencyField"/>
+	<xs:element name="OHParty" type="partyCode"/>
+	<xs:element name="OHQualifier" type="refQualifier"/>
+	<xs:element name="OHText" type="string100"/>
+	<xs:element name="DESCRIPTION" type="string100"/>
+	<xs:element name="AirCode" type="yesNoField"/>
+	<xs:element name="SeaCode" type="yesNoField"/>
+	<xs:element name="RoadCode" type="yesNoField"/>
+	<xs:element name="OverDimensional" type="yesNoField"/>
+	<xs:element name="Stackable" type="yesNoField"/>
+	<xs:element name="FaxCode" type="yesNoField"/>
+	<xs:element name="EmailCode" type="yesNoField"/>
+	<xs:element name="InvCode" type="yesNoField"/>
+	<xs:element name="HouseBillCode" type="yesNoField"/>
+	<xs:element name="ROCarrier" type="string4"/>
+	<xs:element name="ROVessel" type="string50"/>
+	<xs:element name="ROVesselCode" type="string4"/>
+	<xs:element name="ROVoyage" type="string15"/>
+	<xs:element name="RefID" type="string10"/>
+	<xs:element name="RefValue" type="string50"/>
+	<xs:element name="PODPartialDateTime" type="xs:dateTime"/>
+	<xs:element name="DeliveryDateTime" type="xs:dateTime"/>
+	<xs:element name="DocsToBrokerDateTime" type="xs:dateTime"/>
+	<xs:element name="PODCompleteDateTime" type="xs:dateTime"/>
+	<xs:element name="PODFullDateTime" type="xs:dateTime"/>
+	<xs:element name="DueDateTime" type="xs:dateTime"/>
+	<xs:element name="PickUpEndDateTime" type="xs:dateTime"/>
+	<xs:element name="VGMEventDate" type="xs:dateTime"/>
+	<xs:element name="Route1DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="Route1DepartureDateTimeUTC" type="xs:dateTime"/>
+	<xs:element name="Route1DepartureDateTimeTZ" type="string50"/>
+	<xs:element name="Route2DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="Route2DepartureDateTimeUTC" type="xs:dateTime"/>
+	<xs:element name="Route2DepartureDateTimeTZ" type="string50"/>
+	<xs:element name="Route3DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="Route3DepartureDateTimeUTC" type="xs:dateTime"/>
+	<xs:element name="Route3DepartureDateTimeTZ" type="string50"/>
+	<xs:element name="Route1ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="Route2ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="Route3ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute1DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute2DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute3DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute1ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute2ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="ActualRoute3ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="ScheduledPickupDatetime" type="xs:dateTime"/>
+	<xs:element name="RequestedDeliveryDateTime" type="xs:dateTime"/>
+	<xs:element name="ScheduledDeliveryDateTime" type="xs:dateTime"/>
+	<xs:element name="DepartureDateTime" type="xs:dateTime"/>
+	<xs:element name="DepartureDateTimeUTC" type="xs:dateTime"/>
+	<xs:element name="DepartureDateTimeTZ" type="string50"/>
+	<xs:element name="ArrivalDateTime" type="xs:dateTime"/>
+	<xs:element name="ArrivalDateTimeUTC" type="xs:dateTime"/>
+	<xs:element name="ArrivalDateTimeTZ" type="string50"/>
+	<xs:element name="FreeTimeExpDate" type="xs:dateTime"/>
+	<xs:element name="HousePrintDate" type="xs:dateTime"/>
+	<xs:element name="MasterPrintedDate" type="xs:dateTime"/>
+	<xs:element name="DateTime" type="xs:dateTime"/>
+	<xs:element name="DateTimeTZ" type="string50"/>
+	<xs:element name="DateTimeUtc" type="xs:dateTime"/>
+	<xs:element name="MainDateTime" type="xs:dateTime"/>
+	<xs:element name="DateOfIssue" type="xs:dateTime"/>
+	<xs:element name="DateOfIssueUTC" type="xs:dateTime"/>
+	<xs:element name="DateOfIssueTZ" type="string50"/>
+	<xs:element name="BookingCreateDate" type="xs:dateTime"/>
+	<xs:element name="BookingCreateDateUTC" type="xs:dateTime"/>
+	<xs:element name="BookingCreateDateTZ" type="string50"/>
+	<xs:element name="InTransitDate" type="xs:dateTime"/>
+	<xs:element name="PickUpDateTime" type="xs:dateTime"/>
+	<xs:element name="PickUpCountryCode" type="string50"/>
+	<xs:element name="DeliveryCountryCode" type="string50"/>
+	<xs:element name="AWBDate" type="xs:dateTime"/>
+	<xs:element name="ITDate" type="xs:dateTime"/>
+	<xs:element name="BLDate" type="xs:dateTime"/>
+	<xs:element name="GeneralOrderDate" type="xs:dateTime"/>
+	<xs:element name="ItemNo" type="xs:int"/>
+	<xs:element name="PageNumber" type="xs:int"/>
+	<xs:element name="NumberOfOrignals" type="xs:int"/>
+	<xs:element name="SOLASVGMDate" type="xs:dateTime"/>
+	<xs:element name="SOLASDocCDate" type="xs:dateTime"/>
+	<xs:element name="SOLASVGMShipperNo" type="string50"/>
+	<xs:element name="SOLASVGMShipperName1" type="string100"/>
+	<xs:element name="SOLASVGMShipperName2" type="string100"/>
+	<xs:element name="SOLASVGMShipperAdd1" type="string100"/>
+	<xs:element name="SOLASVGMShipperAdd2" type="string100"/>
+	<xs:element name="SOLASVGMShipperZipCode" type="string100"/>
+	<xs:element name="SOLASVGMShipperCity" type="string100"/>
+	<xs:element name="SOLASVGMShipperState" type="string100"/>
+	<xs:element name="SOLASVGMShipperCont" type="string100"/>
+	<xs:element name="SOLASVGMShipperPhone" type="string100"/>
+	<xs:element name="SOLASVGMShipperMail" type="string100"/>
+	<xs:element name="SOLASVGMAuthno" type="string100"/>
+	<xs:element name="SOLASVGMAuthName1" type="string100"/>
+	<xs:element name="SOLASVGMAuthName2" type="string100"/>
+	<xs:element name="SOLASVGMAuthAdd1" type="string100"/>
+	<xs:element name="SOLASVGMSAuthAdd2" type="string100"/>
+	<xs:element name="SOLASVGMAuthZipCode" type="string100"/>
+	<xs:element name="SOLASVGMAuthCity" type="string100"/>
+	<xs:element name="SOLASVGMAuthState" type="string100"/>
+	<xs:element name="SOLASVGMAuthCont" type="string100"/>
+	<xs:element name="SOLASVGMAuthPhone" type="string100"/>
+	<xs:element name="SOLASVGMAuthEmail" type="string100"/>
+	<xs:element name="SOLASVGMRespno" type="string100"/>
+	<xs:element name="SOLASVGMRespName1" type="string100"/>
+	<xs:element name="SOLASVGMRespName2" type="string100"/>
+	<xs:element name="SOLASVGMRespAdd1" type="string100"/>
+	<xs:element name="SOLASVGMSRespAdd2" type="string100"/>
+	<xs:element name="SOLASVGMRespZipCode" type="string100"/>
+	<xs:element name="SOLASVGMRespCity" type="string100"/>
+	<xs:element name="SOLASVGMRespState" type="string100"/>
+	<xs:element name="SOLASVGMRespCont" type="string100"/>
+	<xs:element name="SOLASVGMRespPhone" type="string100"/>
+	<xs:element name="SOLASVGMRespEmail" type="string100"/>
+	<xs:element name="SOLASVGMWeigno" type="string100"/>
+	<xs:element name="SOLASVGMWeigName1" type="string100"/>
+	<xs:element name="SOLASVGMWeigName2" type="string100"/>
+	<xs:element name="SOLASVGMWeigAdd1" type="string100"/>
+	<xs:element name="SOLASVGMSWeigAdd2" type="string100"/>
+	<xs:element name="SOLASVGMWeigZipCode" type="string100"/>
+	<xs:element name="SOLASVGMWeigCity" type="string100"/>
+	<xs:element name="SOLASVGMWeigState" type="string100"/>
+	<xs:element name="SOLASVGMWeigCont" type="string100"/>
+	<xs:element name="SOLASVGMWeigPhone" type="string100"/>
+	<xs:element name="SOLASVGMWeigEmail" type="string100"/>
+	<xs:element name="SOLASVGMMethod" type="string100"/>
+	<xs:element name="SOLASVGM" type="string100"/>
+	<xs:element name="SOLASVGMUom" type="string100"/>
+	<xs:element name="SOLASVGMCargoWeight" type="string100"/>
+	<xs:element name="SOLASVGMCargoWeightUOM" type="string100"/>
+	<xs:element name="SOLASVGMDunnageWeight" type="string100"/>
+	<xs:element name="SOLASVGMDunnageUOM" type="string100"/>
+	<xs:element name="SOLASVGMTareWeight" type="string100"/>
+	<xs:element name="SOLASVGMTareUOM" type="string100"/>
+	<xs:element name="SOLASVGMDetDate" type="xs:dateTime"/>
+	<xs:element name="SOLASVGMDetLoca" type="string100"/>
+	<xs:element name="SOLASVGMDetLoct" type="string100"/>
+	<xs:element name="SOLASVGMRespCert" type="string100"/>
+	<xs:element name="SOLASVGMRespRef" type="string100"/>
+	<xs:element name="SOLASVGMAuthCert" type="string100"/>
+	<xs:element name="SOLASVGMAuthRef" type="string100"/>
+	<xs:element name="SOLASVGMShipperCert" type="string100"/>
+	<xs:element name="SOLASVGMShipperRef" type="string100"/>
+	<xs:element name="SOLASVGMVerificationDate" type="xs:dateTime"/>
+	<xs:element name="SOLASVGMVerificationSig" type="string100"/>
+	<xs:element name="TruckMaster" type="bookingNumber"/>
+	<xs:element name="CRefID" type="string10"/>
+	<xs:element name="CRefIDValue" type="string50"/>
+	<xs:element name="PortOfLoadingScheduleK" type="FrtAreaField"/>
+	<xs:element name="PortOfLoadingScheduleD" type="FrtAreaField"/>
+	<xs:element name="PortOfDischargeScheduleK" type="FrtAreaField"/>
+	<xs:element name="PortOfDischargeScheduleD" type="FrtAreaField"/>
+	<xs:element name="VesselCallSign" type="string10"/>
+	<xs:element name="AMSVesselCode" type="string20"/>
+	<xs:element name="VesselCountryOfRegistry" type="countryCode"/>
+	<xs:element name="SCACCode" type="string4"/>
+	<xs:element name="OLNo" type="xs:int"/>
+	<xs:element name="OLCarrierCode" type="string4"/>
+	<xs:element name="OLCarrierName" type="string50"/>
+	<xs:element name="OLSCACCode" type="string4"/>
+	<xs:element name="OLVessel" type="string50"/>
+	<xs:element name="OLVesselCode" type="string10"/>
+	<xs:element name="OLVesselCallSign" type="string10"/>
+	<xs:element name="OLAMSVesselCode" type="string20"/>
+	<xs:element name="OLVesselCountryOfRegistry" type="countryCode"/>
+	<xs:element name="OLVoyage" type="string15"/>
+	<xs:element name="OLPOL" type="string100"/>
+	<xs:element name="OLPOD" type="string100"/>
+	<xs:element name="OLPOLCode" type="locationCode"/>
+	<xs:element name="OLPODCode" type="locationCode"/>
+	<xs:element name="OLPOLState" type="stateField"/>
+	<xs:element name="OLPODState" type="stateField"/>
+	<xs:element name="OLPOLCtryCode" type="countryCode"/>
+	<xs:element name="OLPODCtryCode" type="countryCode"/>
+	<xs:element name="OLPOLScheduleK" type="FrtAreaField"/>
+	<xs:element name="OLPOLScheduleD" type="FrtAreaField"/>
+	<xs:element name="OLPODScheduleK" type="FrtAreaField"/>
+	<xs:element name="OLPODScheduleD" type="FrtAreaField"/>
+	<xs:element name="PlaceOfDeliveryScheduleD" type="FrtAreaField"/>
+	<xs:element name="PlaceOfDeliveryScheduleK" type="FrtAreaField"/>
+	<xs:element name="PlaceOfReceiptScheduleD" type="FrtAreaField"/>
+	<xs:element name="PlaceOfReceiptScheduleK" type="FrtAreaField"/>
+	<xs:element name="OLETDDateTime" type="xs:dateTime"/>
+	<xs:element name="OLETADateTime" type="xs:dateTime"/>
+	<xs:element name="OLATDDateTime" type="xs:dateTime"/>
+	<xs:element name="OLATADateTime" type="xs:dateTime"/>
+	<xs:element name="EDIType" type="string35"/>
+	<xs:element name="BookingType" type="string10"/>
+	<xs:element name="AESPOSTState" type="string100"/>
+	<xs:element name="OHAESPOSTState" type="string100"/>
+	<xs:element name="CloseDate" type="xs:dateTime"/>
+	<xs:element name="CEVAUniqueID" type="string256"/>
+	<xs:element name="CallbackQualifier" type="string50"/>
+	<xs:element name="CallbackContents" type="string256"/>
+	<xs:element name="Environment" type="string4"/>
+	<xs:element name="CustomerNumber" type="customerNumber"/>
+	<xs:element name="InvoiceType" type="OFSinvoiceType"/>
+	<xs:element name="InvoiceTotal" type="amountField"/>
+	<xs:element name="MainCarriageServiceCode" type="string5"/>
+</xs:schema>

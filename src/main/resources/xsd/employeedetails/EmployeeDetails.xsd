@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace=""  version="1.1" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="employeeDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="employeeName" type="xs:string" />
+        <xs:element name="employeeMail" type="xs:string" />
+        <xs:element name="employeeId" type="xs:string" />
+        <xs:element name="bloodGroup" type="xs:string" />
+        <xs:element name="personaldetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="employeeId" type="xs:unsignedByte" />
+              <xs:element name="primarySkill" type="xs:string" />
+              <xs:element name="birthPlace" type="xs:string" />
+              <xs:element name="fatherName" type="xs:string" />
+              <xs:element name="motherMaidenName" type="xs:string" />
+              <xs:element name="personalEmail" type="xs:string" />
+              <xs:element name="presentAddress" type="xs:string" />
+              <xs:element name="presentAddressFromDate" type="xs:dateTime" />
+              <xs:element name="permanentAddressFromDate" type="xs:dateTime" />
+              <xs:element name="presentAddressToDate" type="xs:dateTime" />
+              <xs:element name="permanentAddressToDate" type="xs:dateTime" />
+              <xs:element name="title" type="xs:string" />
+              <xs:element name="natiionality" type="xs:string" />
+              <xs:element name="maidenName" type="xs:string" />
+              <xs:element name="motherName" type="xs:string" />
+              <xs:element name="dob" type="xs:dateTime" />
+              <xs:element name="alternateEmail" type="xs:string" />
+              <xs:element name="permanentAddress" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="additionaldetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empId" type="xs:string" />
+              <xs:element name="passportNo" type="xs:string" />
+              <xs:element name="passportExpiryDate" type="xs:dateTime" />
+              <xs:element name="visaRejectedStatus" type="xs:string" />
+              <xs:element name="visaRejectedDate" type="xs:dateTime" />
+              <xs:element name="visaRejectedReason" type="xs:string" />
+              <xs:element name="visaRejectedCountry" type="xs:string" />
+              <xs:element name="panNo" type="xs:string" />
+              <xs:element name="itPanNo" type="xs:string" />
+              <xs:element name="drivingLicenseNo" type="xs:string" />
+              <xs:element name="drivingLicenseValidDate" type="xs:dateTime" />
+              <xs:element name="refernceStatus" type="xs:string" />
+              <xs:element name="referedPersonName" type="xs:string" />
+              <xs:element name="referedPersonOrg" type="xs:string" />
+              <xs:element name="referedPersonDesignation" type="xs:string" />
+              <xs:element name="referedPersonAddress" type="xs:string" />
+              <xs:element name="referedPersonContact" type="xs:string" />
+              <xs:element name="referedpersonEmail" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="String" />
+        <xs:element name="previousEmployementDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="employerSno" type="xs:unsignedByte" />
+              <xs:element name="previousCompanyName" type="xs:string" />
+              <xs:element name="previousCompanyAdrress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="dNo" type="xs:unsignedShort" />
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="city" type="xs:string" />
+                    <xs:element name="state" type="xs:string" />
+                    <xs:element name="country" type="xs:string" />
+                    <xs:element name="zipcode" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="previousEmpType" type="xs:string" />
+              <xs:element name="previousEmpDesignation" type="xs:string" />
+              <xs:element name="reportingPersonName" type="xs:string" />
+              <xs:element name="repostingPersonPosition" type="xs:string" />
+              <xs:element name="reportingPersonContact" type="xs:unsignedLong" />
+              <xs:element name="previousEmploymentPeriodFrom">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="type" type="xs:string" />
+                    <xs:element name="isEstimate" type="xs:boolean" />
+                    <xs:element name="value" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="previousEmploymentPeriodTo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="type" type="xs:string" />
+                    <xs:element name="isEstimate" type="xs:boolean" />
+                    <xs:element name="value" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="previousEmpId" type="xs:string" />
+              <xs:element name="leavingReason" type="xs:string" />
+              <xs:element name="leaveMode" type="xs:string" />
+              <xs:element name="lastSalary" type="xs:string" />
+              <xs:element name="paySlips" type="xs:string" />
+              <xs:element name="form16" type="xs:string" />
+              <xs:element name="relievingLetter" type="xs:string" />
+              <xs:element name="appointmentLetter" type="xs:string" />
+              <xs:element name="empId" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
